@@ -6,11 +6,11 @@ use std::fmt;
 /// Defines the result of a query operation on a Model
 #[derive(Debug)]
 pub struct QueryResult {
-    pub(crate) row: QueryResultRow,
+    pub row: QueryResultRow,
 }
 
 #[allow(clippy::enum_variant_names)]
-pub(crate) enum QueryResultRow {
+pub enum QueryResultRow {
     #[cfg(feature = "sqlx-mysql")]
     SqlxMySql(sqlx::mysql::MySqlRow),
     #[cfg(feature = "sqlx-postgres")]
